@@ -34,7 +34,7 @@ public class UsuariosGruposRestController {
 	        return ugRepo.findAll();
 	    }
 	   
-	    @GetMapping("/{id}")
+	    @GetMapping("/listar/{id}")
 	    public List<UsuariosGrupos> getGruposById(@PathVariable(value = "id") int id)
 	        {
 	        return service.fetchUserGroupbyId(id);
@@ -48,7 +48,7 @@ public class UsuariosGruposRestController {
 			return UsuariosGruposObj;
 		}
 		
-	    @GetMapping("/usuariosActivos/{idGrupo}/{localizacion}")
+	    @GetMapping("/usuarios_activos/{idGrupo}/{localizacion}")
 	    public List<UsuariosGrupos> getGruposByIdIdGroupLocalitation
 	    (@PathVariable(value = "idGrupo") int idGrupo, @PathVariable(value = "localizacion") int localizacion)
 	        {
@@ -56,7 +56,7 @@ public class UsuariosGruposRestController {
 	    }
 		
 		
-	    @GetMapping("/buscarUsuariosGrupos/{idUsuario}/{idGrupo}")
+	    @GetMapping("/buscar_usuarios_grupos/{idUsuario}/{idGrupo}")
 	    public UsuariosGrupos getGruposByIdUsuarioandIdGroup
 	    (@PathVariable(value = "idUsuario") int idUsuario, @PathVariable(value = "idGrupo") int idGrupo)
 	        {
@@ -64,7 +64,7 @@ public class UsuariosGruposRestController {
 	    }
 		
 	    
-	    @PutMapping("localizacionActia/{idUsuario}/{idGrupo}")
+	    @PutMapping("localizacion_activa/{idUsuario}/{idGrupo}")
 	    public ResponseEntity<UsuariosGrupos> updateUsuarioGrupoLocalizacion
 	    (@PathVariable(value = "idUsuario") int idUsuario, @PathVariable(value = "idGrupo") int idGrupo,
 	         @Validated @RequestBody UsuariosGrupos usuDetalles) throws ResourceNotFoundException {
