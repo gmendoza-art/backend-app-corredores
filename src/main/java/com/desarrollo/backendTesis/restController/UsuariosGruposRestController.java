@@ -19,7 +19,7 @@ import com.desarrollo.backendTesis.repository.UsuariosGruposRepository;
 import com.desarrollo.backendTesis.service.UsuariosGruposService;
 
 @RestController
-@RequestMapping("UsuariosGrupos")
+@RequestMapping("usuariosgrupos")
 @CrossOrigin("*")
 public class UsuariosGruposRestController {
 	
@@ -35,7 +35,6 @@ public class UsuariosGruposRestController {
 	    }
 	   
 	    @GetMapping("/{id}")
-	    @CrossOrigin(origins = "http://localhost:4200")
 	    public List<UsuariosGrupos> getGruposById(@PathVariable(value = "id") int id)
 	        {
 	        return service.fetchUserGroupbyId(id);
@@ -50,7 +49,6 @@ public class UsuariosGruposRestController {
 		}
 		
 	    @GetMapping("/usuariosActivos/{idGrupo}/{localizacion}")
-	    @CrossOrigin(origins = "http://localhost:4200")
 	    public List<UsuariosGrupos> getGruposByIdIdGroupLocalitation
 	    (@PathVariable(value = "idGrupo") int idGrupo, @PathVariable(value = "localizacion") int localizacion)
 	        {
@@ -59,7 +57,6 @@ public class UsuariosGruposRestController {
 		
 		
 	    @GetMapping("/buscarUsuariosGrupos/{idUsuario}/{idGrupo}")
-	    @CrossOrigin(origins = "http://localhost:4200")
 	    public UsuariosGrupos getGruposByIdUsuarioandIdGroup
 	    (@PathVariable(value = "idUsuario") int idUsuario, @PathVariable(value = "idGrupo") int idGrupo)
 	        {
