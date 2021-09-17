@@ -58,7 +58,7 @@ public class UsuariosGruposRestController {
 	    }
 		
 		
-	    @GetMapping("/{idUsuario}/{idGrupo}")
+	    @GetMapping("/buscarUsuariosGrupos/{idUsuario}/{idGrupo}")
 	    @CrossOrigin(origins = "http://localhost:4200")
 	    public UsuariosGrupos getGruposByIdUsuarioandIdGroup
 	    (@PathVariable(value = "idUsuario") int idUsuario, @PathVariable(value = "idGrupo") int idGrupo)
@@ -66,6 +66,7 @@ public class UsuariosGruposRestController {
 	        return ugRepo.findByidUsuarioandidGrupo(idUsuario,idGrupo);
 	    }
 		
+	    
 	    @PutMapping("localizacionActia/{idUsuario}/{idGrupo}")
 	    public ResponseEntity<UsuariosGrupos> updateUsuarioGrupoLocalizacion
 	    (@PathVariable(value = "idUsuario") int idUsuario, @PathVariable(value = "idGrupo") int idGrupo,
