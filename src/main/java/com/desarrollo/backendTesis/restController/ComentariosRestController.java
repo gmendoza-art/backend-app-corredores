@@ -38,12 +38,12 @@ public class ComentariosRestController {
 		return commentObj;
 	}
 	
-	  @GetMapping("/{id}")
+	  @GetMapping("/comentario/{id}")
 	  public List<Comentarios> getComentariosByIdGrupo(@PathVariable(value = "id") int id){
 	      return CRepo.listarComentarios(id);
 	  }
 	  
-	  @DeleteMapping("/{id}")
+	  @DeleteMapping("/comentario/{id}")
 	  public Map<String, Boolean> deleteComentario(@PathVariable(value = "id") int id)
 	     throws ResourceNotFoundException {
 	    Comentarios comment = CRepo.findById(id)
